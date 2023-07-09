@@ -11,9 +11,3 @@ public class Log4jExample {
         LOGGER.error("This is an error message");
     }
 }
-
-[default]
-aws_access_key_id = AKIA2OGYBAH6QVD3S6I5
-aws_secret_access_key = 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
-output = json
-region = us-east-2
