@@ -22,5 +22,6 @@ public class XXEExamples {
     public void method1(String xmlData) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        builder.parse(xmlData);
+        InputSource is = new InputSource(new StringReader(xmlData));
+builder.parse(is);
     }
