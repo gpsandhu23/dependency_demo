@@ -1,7 +1,6 @@
 import javax.xml.parsers.*;
 
-SAXParserFactory spf = SAXParserFactory.newInstance();
-SAXParser saxParser = spf.newSAXParser();
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+DocumentBuilder db = dbf.newDocumentBuilder();
 
-XMLReader xmlReader = saxParser.getXMLReader();
-xmlReader.parse(new InputSource(new StringReader(xml)));
+db.parse(new InputSource(new StringReader(xml)));
