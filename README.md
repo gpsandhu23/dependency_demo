@@ -1,3 +1,3 @@
 # dependency_demo
 
-This a demo repository to check Depdendabot alerts for vulns with known issues
+This a demo repository to check a security testing AI tool I'm building
