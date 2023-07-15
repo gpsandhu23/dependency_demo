@@ -4,17 +4,17 @@ public class CommandInjection {
 
     public static void directRuntimeExec(String userInput) throws IOException {
         Runtime runtime = Runtime.getRuntime();
-        runtime.exec("ping " + userInput); // vulnerable to command injection
+        runtime.exec("ping " + userInput);
     }
 
     public static void processBuilderExec(String userInput) throws IOException {
         ProcessBuilder pb = new ProcessBuilder("ping", userInput);
-        pb.start(); // vulnerable to command injection
+        pb.start();
     }
 
     public static void shellCommandExec(String userInput) throws IOException {
         Runtime runtime = Runtime.getRuntime();
-        runtime.exec("/bin/sh -c echo " + userInput); // vulnerable to command injection
+        runtime.exec("/bin/sh -c echo " + userInput);
     }
 
     public static void main(String[] args) throws IOException {
