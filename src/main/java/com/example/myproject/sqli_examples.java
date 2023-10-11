@@ -1,11 +1,13 @@
-String query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
-Statement statement = connection.createStatement();
-ResultSet resultSet = statement.executeQuery(query);
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+statement.setString(1, username);
+statement.setString(2, password);
+ResultSet resultSet = statement.executeQuery();
 
-String query = "DELETE FROM users WHERE id = '" + userId + "'";
-Statement statement = connection.createStatement();
-ResultSet resultSet = statement.executeQuery(query);
+PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE id = ?");
+statement.setString(1, userId);
+resultSet = statement.executeQuery();
 
-String query = "UPDATE users SET email = '" + newEmail + "' WHERE username = '" + username + "'";
-Statement statement = connection.createStatement();
-ResultSet resultSet = statement.executeQuery(query);
+PreparedStatement statement = connection.prepareStatement("UPDATE users SET email = ? WHERE username = ?");
+statement.setString(1, newEmail);
+statement.setString(2, username);
+resultSet = statement.executeQuery();
